@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        console.log("ESTUCTURA IF")
+        var mensaje = true;
+        /*
+        ESTRUCTURA IF 
+        if(condicion){ preguntamos si algo es cierto
+
+        }
+        */
+       if(mensaje){
+        console.log("Hola usuario")
+       }
+
+       //Se comparan los valores 
+       if(mensaje == false){
+        console.log("Este menseja no va a salir por consola")
+       }
+
+       var mostrado = false; 
+       var permitirMensajes = true; 
+
+       if(!mostrado && permitirMensajes){
+        console.log("Esto mola tio!")
+       }
+       //Esturctura IF ELSE
+       console.log("ESTRUCTURA IF ELSE")
+       var nombre ="";
+       if (nombre == ""){
+        console.log("¿Cual es tu nombre de pila?");
+       } else{ 
+        console.log("Hemos guardado tu nombre respetando la LPD")
+       }
+
+       //Estructura IF ELSE IF ELSE 
+       console.log("ESTRUCTURA IF ELSE IF ELSE")
+       var edad = 8 ; 
+       if(edad < 12){
+        console.log("Tiens menos de dosssse"); 
+       }else if (edad<19){
+        console.log("Estas en plena adolescencia");
+       }else if(edad < 35){
+        console.log("Aun sigues siendo joven ¡¡Esfuerzate!!");
+       }else{
+        console.log("Piensa en cuidarte un poco más");
+       }
+
+       //OPERADOR TERNARIO
+       /*
+       (condicion) ? EN_CASO_VERDADERO : EN_CASO_FALSO
+       */
+       console.log("Operador ternario");
+       var resultadoTernario = (edad==8)? "Eres muy pequeño" : "Eres muy mayor"
+
+       //ESTRUCTURA FOR
+       /*
+       for (VALOR INICIAL; CONDICION DE BUCLE; INCREMENTO EN CADA ITERACION){
+            SENTENCIAS
+       }
+       */
+       console.log("Estructura FOR")
+       for(let i = 0; i < 5 ; i ++){
+        console.log("iteracion: " + i)
+        console.log(mensaje);
+       }
+
+       //ESTRUCTURA WHILE
+       /*
+       while (CONDICION DE EJECUCION DE BUCLE){
+            SENTENCIAS
+       }
+       */
+      console.log("WHILE")
+      var resultado = 0; var num = 10 ; var i = 0;
+      while(i<= num){
+        resultado += i;
+        i++;
+      }
+
+      console.log(resultado);
+
+
+      //ESTRUCTURA DO-WHILE
+      /*
+      do{
+
+      } while(CONDICION DE BUCLE)
+      */
+     console.log("ESTRUCTURA DO-WHILE")
+     var resultado = 1; var num = 5;
+     do {
+        resultado *= num; 
+        num --;
+     } while (num > 0);
+
+     console.log(resultado);
+
+     //ESTRUCTURA SWITCH
+     //Misma funcionalidad que el if-else-if-else
+     console.log("SWITCH")
+     var numero = 5; 
+     switch (numero){
+        case 5: 
+            console.log("Es el numero 5")
+            break;
+        case 8: 
+            console.log("Es el numero 8")
+            break;
+        case 20: 
+            console.log("Es el numero 20")
+            break;
+        default:
+            console.log("Fuera de parametro")
+            break;
+     }
+
+     //Podemos usar un for para recorrer este tipo de estructuras 
+     console.log("Romper con un for")
+     var letras = "abcdefghijk";
+     var resultado = "";
+
+     for (i in letras){
+        if(letra[i] == "f"){
+            break;//salimos del for 
+        } else {
+            resultado += letras[i];//vamos concatenando letras hasta que encontramos una 'f'
+        }
+     }
+     console.log("CONTINUE")
+     //HACE QUE VUELVA AL PRINCIPUIDO DEL BUCLE Y PASE A LA SIGUIENTE ITERACION
+
+    </script>
+</head
+<body>
+    <h1>Pulsa F12 para ver el control de flujo</h1>
+</body>
+</html>

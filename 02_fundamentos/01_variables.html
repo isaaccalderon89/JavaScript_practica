@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables JS</title>
+    <script type="text/javascript">
+        //Los comentarios son iguales que en Java 
+
+        /*
+        *Estos es un 
+        *Comentario 
+        *Multilínea
+        */
+
+        //Para mostrar valores en JS podemos usar la funcion 'alert' o usar logs
+        //alert No es muy recomendable
+        console.log("Esto es un poco mejor que los alerts, f12 para verlos ")
+
+        /*-------VARIABLES-------
+        podemos gruadar cualquier valor. 
+
+        Las variables solo pueden estar formadas por letras, números, 
+        el simbolo '$' y el '_'
+        EL PRIMER CARACTER NO PUEDE SER UN NÚMERO
+
+        6 tipos básicos -> enteros, decimales, cadenas de texto, booleanos, arrays y objetos. */
+        numero1 = 1;
+        numero1 = 2;//hemos cambiado el valor de la variable
+        numero2 = 1.5;
+        texto1 = 'Hola';
+        texto2 = 'Adiós'; 
+        boolean1 = true;
+        boolean2 = false;
+        array = [];
+        objeto = new Date();
+
+        texto3 = "Una frase con 'comillas simples' dentro";
+        texto4 = 'Una frase con "comillas dobles" dentro';
+        //Otra forma de hacerlo
+        texto5 = 'Una frase con \' comillas simples\' dentro';
+        texto6 = "Una frase con \" comillas dobles\" dentro";
+
+        console.log(numero1);
+        console.log(numero2);
+        //conlose.log(texto1);
+        console.log(texto2);
+        console.log(boolean1);
+        console.log(boolean2);
+        console.log(texto3);
+        console.log(texto4);
+        console.log(texto5);
+        console.log(texto6);
+
+
+        var movida; //podemos dejar variables sin definir, el valor seraá 'Undefined'
+        console.log(movida);
+
+        //'null' es un tipo de valor en JS, indica ausencia de valor
+        var referencia = null; 
+        console.log(referencia);
+
+        //Como JS no es un lengaje fuertemente tipado
+        //Podemos reasignar valores de distinto tipo
+        referencia = 7 ; 
+        referencia = "Siete";
+        referencia = true; 
+
+        //Con las operaciones imposibles JS devolverá 'NaN' (Not a Number)
+
+        var numero1 = "cadena";
+        var numero2 = 2; 
+        console.log("Resultado de la división: " + numero1/numero2);//resultado NaN
+
+        //Podemos preguntar que tipo de variables es
+        console.log(isNaN(texto1));//la pregunta es en negativo, pregunta si no es un numero, la respuesta será TRUE. 
+        console.log(isNaN(numero2));//false
+
+        /*
+        La palabra reservada 'Typeof' sirve para averiguar cual es el tipo que estamos guardando
+        */
+       if(typeof dato == "number"){
+        console.log("El dato es un numero")
+       }
+       if (typeof movida == "undefined"){
+        console.log("La movida es undefined");
+       }
+
+       /*
+       ------------LET---------
+
+       Este tipo de variable funciona dentro de una función lo declaramos con la palabra reservada 'LET'
+       Es recomendable utilizar este tipo de variable en JS
+       IMPORTANTE con let no se puede redefinir una palabra.
+       */
+      let num1 = 5; 
+      let txt1 = "otro texto"; 
+      let v1 = 9; 
+
+      //Desde las últimas versiones la palabra reserrvada 'CONST' se crean las constantes
+      //no se puede cambiar su valor
+      const PI = 3.1416;
+      console.log(PI);
+
+      console.log("***********AMBITO DE LAS VARIABLES*************");
+      function pruebaVar(){
+        //Las variables que no tienen declaración, es decir, ni VAR ni LET son de ámbito global
+        variable1 = "Esta variable es global"
+        //Las variables con var su ámbito es el de función
+        var variable2 = "El ámbito de esta variable es de ESTA función"
+        console.log(variable1)
+        console.log(variable2)
+
+        if(2 > 1){
+            var variable3 = "Harry potter es un muggle"
+        }
+
+        console.log(variable3)
+      }
+
+      pruebaVar()
+        console.log(variable1)
+        //El resto de variables han muerto en la anterior función. 
+      
+
+      console.log("*********LET********")
+      function pruebaLet(){
+        let var1 = 10
+        if(true){
+            let var2 = 20
+            console.log("var1: " + var1)
+            console.log("var2: "+ var2)
+        }//aqui muere var2
+        console.log("var1: " + var1)
+      }//Aquí muere la var1
+
+      pruebaLet()
+
+      /*
+      RESUMEN ENTRE LA DIFERENCIA DE LET , VAR y CONST
+
+      Si ponemos var: 
+      -dentro de un Script, será global. 
+      -dentro de una función, será legible dentro de la función, entera. 
+      -dentro de un bloque, será legible dentro de la función, entera. 
+      -podrá ser cambiao su valor. 
+
+
+      Si ponemos let:
+      -dentro de un Script, será global
+      -dentro de una función, será legible dentro de la función y de los bloques "hijos"
+      -dentro de un bloque, será legible solamente dentro del propio bloque. 
+      -No podrá ser cambiado su valor.
+
+      
+      Si ponemos const: 
+      -dentro de un script, será global
+      -dentro de una función, será legible dentro de la función y de los bloques "hijos"
+      -dentro de un bloque, será legible solamente dentro del propio bloque
+      - no podrá ser cambiado de valor. 
+      */
+
+    </script>
+</head>
+<body>
+    <h1>Variables y ámbito!! Pulsa F12 para ver la consola</h1>
+</body>
+</html>

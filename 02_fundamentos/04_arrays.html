@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <script type="text/javascript">
+        /*
+        Los arrays con una coleccion ordenada de objetos
+        los arrays en js son objetos
+        Hay muchas maneras de crear arrays
+        */
+       console.log("INICIALIZAMOS LOS ARRAYS")
+       //INICIALIZAMOS LOS ARRAYS
+       let array1 = []//array vacío
+       let array2 = [1,2,3,4,5]//array con datos
+       let array3 = [1,2,3,4,5, true, "pepe", null]
+
+       /*
+       Los arrays em JS se pueden usar de 2 maneras diferentes
+            1- Manera indexada -> Array de elementos ordenados, tienen un índice y un valor. 
+            2- Manera asociativa -> serian euqivalente a los mapas de java o diccionarios 
+       */
+
+       //INDEXADOS
+       console.log("------------ARRAYS INDEXADOS ------------")
+       array1[0] = 10
+       array1[1] = 20
+       array1[2] = 30
+
+       let valor = array1[0]//obtener el valor
+
+       let valor2 = array1[200000]
+       console.log(valor2)
+
+
+       /*
+       Con la propiedad LENGTH podemos saber el tamaño de un array indexado
+       OJO con los arrays asociativos no valdría
+       */
+
+       console.log(array1.length)//ojo esto es para indexados
+
+       /*
+       con la funcion PUSH podemos agregar valor
+       */
+      let array4 = []
+      array4.push("A")
+      array4.push("B")
+      array4.push("C")
+      array4.push("D", "E", "F")
+
+      console.log(array4)
+      // Con la estructura FIFO podemos eliminar el primer elemento con SHIFT
+      console.log(array4.shift());
+      console.log(array4)
+
+      //Con la estructura LIFO podemos eliminar el ultimo elemento con POP
+      console.log(array4.pop())
+      console.log(array4)
+
+      //con la funcion splice podemos elimina un elelmnto concreto del array 
+      console.log(array4.splice(1,1))
+      console.log(array4) 
+      console.log(array4.splice(1,2))
+      console.log(array4)
+
+      /*  JOIN  */
+      //Puedes unir en una cadena todos los elementos de un array
+      var array = ["hola", "usuario"];
+      var mensaje = array.join("");
+      mensaje = array.join(" ");
+      mensaje = array.join("-");
+
+
+      /* REVERSE */
+      // Da la vuelta al array 
+      var array = [1,2,3,4];
+      console.log("Array al reves: "+ array.reverse());
+
+      console.log("=====================");
+      /* 
+      ARRAYS ASIOCIATIVOS 
+      No están indexados, es decir no hay un indice que diga la posición. 
+      Una sola clave, la clave es única y no se puede repetir. Si se repite se cambia de valor.
+      */
+     console.log("---------- Array Asociativos -----------")
+     let cervezas = []
+
+     cervezas["Mahou"] = "4.8"
+     cervezas["san miguel"] = "4.6"
+     cervezas["Guinness"] = "5.1"
+
+     console.log(cervezas["Mahou"])
+
+     //Para eliminar un elemnto podemos usar 'delete'
+     delete cervezas["San miguel"]
+     console.log("Cerveza eliminada: " + cervezas["San Miguel"])
+     console.log("Cervezas operativas: "+ cervezas["Mahou"])
+     console.log(cervezas)
+
+     //Recorriendo arrays
+     var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+     console.log("FOR CLÁSICO")
+     for (let i = 0; i < dias.length; i++){
+        console.log(dias[i]);//Mostrará cada uno de los días de la semana en cada vuelta. 
+     }
+
+     //Estructura FOR-IN, ideal para recorrer índices o claves de un array. 
+     console.log("FOR IN: Array indexado")
+     for (let indice in dias){
+        console.log(dias[indice]);
+     }
+
+     console.log("FOR IN: Array asociativo")
+     for(let clave in cervezas){
+        console.log(clave + ":" + cervezas[clave])
+     }
+
+
+     /*
+     Para los arrays indexados podemos usar FOR-OF (equivalente al for-each de Java)
+     Nos devuelve el valor del objeto en vez de el indice
+     */
+    console.log("FOR OF")
+    array2 = [1,2,3,4,5]
+    for (let numero of array2){//Nótese la diferencia de poner "in" o poner "of"
+        console.log(numero)
+    }
+
+
+    /*INTRODUCCION A LOS OBJETOS EN JS
+    Los objetos en JS son arrays asiociativos*/
+    console.log("----------- ARRAYS ASOCIATIVOS (OBJETOS)-------------")
+    let persona = []
+    persona["nombre"] = "Oliver Atom"
+    persona["pais"] = "Japón"
+    persona["telefono"] = "625975190"
+
+    //Para aceder a los valores se hace a traves de la clave
+    let nombre = persona ["nombre"]
+    //Tambien se puede acceder a ellos con el "." y la clave
+    nombre = persona.nombre //equivalente a 'let nombre = persona ["nombre"]'
+    let pais = persona.pais
+    let telefono = persona.telefono
+    let tacata = persona.tacata
+
+    console.log(nombre +" " + pais + " " + telefono + " " + tacata);
+
+    </script>
+</head>
+<body>
+    <h1>ARRAYS!!!!! Pulsa F12 para verlos</h1>
+</body>
+</html>

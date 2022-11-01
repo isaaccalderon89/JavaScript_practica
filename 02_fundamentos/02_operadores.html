@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores JS</title>
+    <script type="text/javascript">
+        //Asignación 
+        var variable = "Isaac Calderón"
+        var numero = 1
+
+        //incremento y decremento 
+        console.log("INCREMENTO/DECREMENTRO")
+        numero++
+        numero++
+        numero--
+        console.log(numero)
+        console.log(numero++)
+        console.log(++numero)
+
+        //Lógicos
+        var verdad = true; 
+        var mentira = false; 
+
+        console.log("LOGICOS")
+        console.log(verdad && mentira)//AND
+        console.log(verdad || mentira)//OR 
+        console.log(!verdad)//NEGACION
+        console.log(!mentira)
+
+        /*
+            AND                    OR 
+        V   -   V -  V          V  -   V  - V
+        F   -   V -  F          V  -   F  - V
+        V   -   F -  F          F  -   V  - V
+        F   -   F -  F          F  -   F  - F
+        */
+
+        //MATEMATIVOS
+        console.log("Matematicos")
+        var numero1 = 10; var numero2 = 5
+
+        resultado = numero1 / numero2; //dividir 
+        console.log(resultado)
+        resultado = 5 + numero1; //suma 
+        console.log(resultado)
+        resultado = numero2 - 2; //resta
+        console.log(resultado)
+        resultado = numero1 * numero2; //multiplicacion 
+        console.log(resultado)
+        resultado = numero1 % numero2; //proporciona el resto 
+        console.log(resultado)
+
+        //ACUMULATIVOS
+        console.log("Acumulativos")
+        var numero1 = 5; 
+        numero1 +=6;  //numero1 = numero1 + 6 
+        console.log(numero1)
+        numero1 -= 1;
+        console.log(numero1)
+        numero *= 2;
+        console.log(numero1)
+        numero1 /=5;
+        console.log(numero)
+        numero1 %4;
+        console.log(numero)
+
+        //RELACIONALES
+        console.log("RELACIONALES")
+        var numero1 = 3; var numero2 = 5; 
+        resultado = numero1 > numero2;
+        console.log(resultado)
+        resultado = numero1 < numero2;
+        console.log(resultado)
+
+        numero1 = 5; numero2 = 5;
+        resultado = numero1 >= numero2;
+        resultado = numero1 <= numero2;
+        resultado = numero1 == numero2;
+        resultado = numero1 != numero2;
+
+
+    </script>
+</head>
+<body>
+    <h1>Pulsa F12 para ver los operadores</h1>
+</body>
+</html>
