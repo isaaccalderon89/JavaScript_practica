@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        /*
+        Los STRING en JS son objetos y como tales tienen atributos y funciones
+        */
+       let texto = "Esto es una cadena de caracteres";
+
+       console.log(texto.length)//Con la funcio LENGTH nos devuelve la longitud de la cadena.
+
+       texto.toUpperCase();//toUpperCase nos devuelve la cadena en mayúsculas.
+
+       /*
+       Las cadenas de caracteres en JS son inmutable como en Java.
+       */
+      console.log("============================");
+      let texto2 = texto.toUpperCase();
+      console.log(texto);
+
+      console.log("=========== charArt ==========")
+      var texto3 ="Estoy aprendiendo JS desde cero"
+      console.log("charArt: "+ texto.charArt(4));//charArt - Acceder a un caráster a partir de un indice
+
+      console.log("=========== indexOf ==========")
+      var mensaje = "Hola";// indexOf - devuelve la primera posición de un carácter 
+      var posicion = mensaje.indexOf('a');
+
+      console.log("=========== TRIM ==========")
+      var mensaje = "  Hola      ";
+      var sinEspacios = mensaje.trim();
+      console.log(sinEspacios);
+
+      
+      console.log("=========== subString ==========")
+      var mensaje = "Hola usuario";//subString - obtener una subcadena a partir de una cadena
+      var porcion = mensaje.substring(2);//le pasamos un índice y nos devuelve lo que tenemos de ahí en adelante.
+      porcion = mensaje.substring(5);
+      porcion = mensaje.substring(7);
+
+
+    </script>
+</head>
+<body>
+    <h1>Strings!! Pulsa F12 para ver los comandos</h1>
+</body>
+</html>
