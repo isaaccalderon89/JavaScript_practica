@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La clase Math</title>
+    <script type="text/javascript">
+        //Algunas clases están predefinidas, como el caso de la clase MATH
+
+        //numero PI 
+        console.log(Math.PI)
+
+        //senos, cosenos
+        console.log(Math.sin(90))
+
+        /*
+        Ramdon da un número aleatorio entre el 0 y el 1
+        Lo miultiplicamos por 100 para que las opciones sean desde el 0 al 99
+        Le sumamos uno para hacer entre el 1 y el 100
+        */
+
+        console.log((Math.random() * 100) + 1)//lo ideal sería hacer un round
+
+
+        //REDONDEO si es 4.5 o superior te redondea a 5 si es 4.4 o inferior te redondea a 4
+        console.log(Math.round(4.7));// returns 5
+        console.log(Math.round(4.4));// retunrs 4
+
+        //Con la funcion FLOOR redondea sea como sea hacia arriba
+        console.log(Math.floor(4.7));
+        console.log(Math.floor(4.4));
+
+        //Con la funcion CEIL se redondea siempre para arriba 
+        console.log(Math.ceil(4.7));
+        console.log(Math.ceil(4.4));
+
+        //Potencias base-exponente
+        console.log(Math.pow(8,2));
+
+
+        //Raiz cuadrada
+        console.log(Math.sqrt(64));
+
+        
+        
+    </script>
+</head>
+<body>
+    <h1>Calse Math!! Pulsa F12 para ver la consola</h1>
+</body>
+</html>

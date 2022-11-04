@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <script type="application/javascript">
+        /*
+        En las primeras versiones de JS los objetos eran arrays asiociativos
+
+        Las claves del array con las propiedades del objeto
+        Tenemos varias formas de acceder a las propiedades del objeto que veremos más adelante
+        */
+
+        let libro = []
+        libro["autor"] = "RLS"
+        libro["titulo"] = "La isla del tesoro"
+
+        let libro2 = {
+            autor : 'JC', 
+            titulo : 'El corazon de las tinieblas'
+        }
+        /*
+        En culaquier momento podemos modificar un objeto
+        para añadirle funcionalidad a un objeto le ponemos como valor de una de sus propiedades una función
+        */
+       libro2['saludar'] = function(){
+            console.log("Hola, soy un libro")
+       }
+       libro2.saludar()
+
+       //En JS this es una referencia al objetos al que se le ha asignado la función
+       console.log("========================")
+       let disco = {
+            titulo : 'Machine head', 
+            grupo : 'Deep Purple', 
+            imprimirDatos : function(){
+                console.log(this.titulo+", "+this.grupo)
+            }
+       }
+
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
