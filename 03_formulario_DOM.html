@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario DOM</title>
+
+        <script type="application/javascript">
+
+            function pruebasDOM(){
+                //Document tiene funciones que sirven para localizar nodos en el árbol. Buscando nodos por el id
+                console.log("===========================")
+                let nodo = document.getElementById("dato")
+                /*
+                Nodo es un objeto JS y como tal tiene porpiedades. 
+                Algunas de esas propiedades guardan funciones
+                */
+               console.log(nodo)
+               console.log(nodo.value)
+               console.log(nodo.size)
+               //Un objeto en js es un array asociativo
+               for(let clave in nodo){
+                
+               }
+               //AQUI HAY QE SEGUIR CON EL CÓDIGO
+            }
+            
+        </script>
+    </head>
+    <body onload="pruebasDOM()">
+
+        <h1>Arbol DOM</h1>
+
+        Nombre: <input type="text"
+                        name="dato"
+                        id="dato"
+                        size="25"
+                        value="texto"
+                        class="xXx"/>
+
+        <hr>
+
+        <form name="formulario" id="formulario" action="urlServidor" method="get">
+
+            <input type="button" name="action" value="validar" onclick="validar()"/>
+            <input type="button" value="Preparar parametros" onclick="prepararparametros()"/>
+            <input type="submit" name="accion" value="Insertar"/>
+
+            <table>
+                <tr>
+                    <td id="td1">Nombre</td>
+                    <td id="td2">
+                        <input type="text" name="nombre" id="nombre"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="td3">Dirección</td>
+                    <td id="td4">
+                        <input type="text" name="telefono" id="direccion" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="td5">Telefono</td>
+                    <td id="td6">
+                        <input type="text" name="telefono" id="telefono"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="td7">Ciudad</td>
+                    <td id="td8">
+                        <select name="ciudad" id="ciudad">
+                            <opcion>Getafe</opcion>
+                            <opcion>Madrid</opcion>
+                            <opcion>Salamanca</opcion>
+                            <opcion>Santa Pola</opcion>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="td9">Observaciones</td>
+                    <td id="10">
+                        <textarea name="observaciones" id="observaciones"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+    </body>
+</html>
