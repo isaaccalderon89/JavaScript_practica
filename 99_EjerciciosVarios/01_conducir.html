@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 01</title>
+    <script type="text/javascript">
+
+        //Pide por teclado la edad 
+        var edad = prompt("Introduce tu edad");//Con "PROMPT" podemos hacer que el usuario introdzca un dato
+
+        if(Number(edad)==edad){//Comprobamos que la edad es un número
+            if (edad>=18){//Si es mayor o igual de 18
+                document.write("Puedes conducir");
+            }else{
+                document.write("no puedes conducir, recoarga la página de nuevo")
+            }
+        }
+        else{//si los datos introducidos no son de tipo NUMBER 
+            alert("Introduce un numero valido")
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Ejercicio01!!!! Pulsa F12 para verlo</h1>
+</body>
+</html>

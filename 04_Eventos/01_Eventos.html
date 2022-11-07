@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+
+    <script type="text/javascript">
+        /*
+            PROGRAMACION ORIENTADA A EVENTOS
+
+            * Es el usuario el que o lo que active del programa el que dirija el flujo del mismo.
+            * En el mundo web lo más usual es la Programacion Orientada a Eventos..
+            * Cada vez que se pulsa un botón, se produce un evento. 
+            * Cada vez que se carga una página, también se produce un evento (onload).
+            *
+                                                            EVENTOS
+         EVENTO 	       DESCRIPCION 	                       ELEMENTOS PARA LOS QUE ESTA DEFINIDO
+        onblur 	    Un elemento pierde el foco 	            <button>, <input>, <label>, <select>, <textarea>, <body>
+        onchange 	Un elemento ha sido modificado 	        <input>, <select>, <textarea>
+        onclick 	Pulsar y soltar el ratón 	            Todos los elementos
+        ondblclick 	Pulsar dos veces seguidas con el ratón 	Todos los elementos
+        onfocus 	Un elemento obtiene el foco 	        <button>, <input>, <label>, <select>, <textarea>, <body>
+        onkeydown 	Pulsar una tecla y no soltarla 	        Elementos de formulario y <body>
+        onkeypress 	Pulsar una tecla 	                    Elementos de formulario y <body>
+        onkeyup 	Soltar una tecla pulsada 	            Elementos de formulario y <body>
+        onload 	    Página cargada completamente 	        <body>
+        onmousedown Pulsar un botón del ratón y no soltarlo Todos los elementos
+        onmousemove Mover el ratón 	                        Todos los elementos
+        onmouseout 	El ratón "sale" del elemento 	        Todos los elementos
+        onmouseover El ratón "entra" en el elemento 	    Todos los elementos
+        onmouseup 	Soltar el botón del ratón 	            Todos los elementos
+        onresize 	Modificar el tamaño de la ventana 	    <body>
+        onselect 	Seleccionar un texto 	                <input>, <textarea>
+        onsubmit 	Enviar el formulario 	                <form>
+        onunload 	Se abandona la página	                <body>
+
+        TRES TIPOS DE MANEJADORES DE EVENTOS
+        1- Manejadores como atributos de los elementos HTML.
+        2- Manejadores como funciones JavaScript externas.
+        3- Manejadores de eventos "semánticos".
+        */
+    </script>
+</head>
+<body>
+    <!--
+        1) Manejadores de eventos como atributos de los elementos HTML.
+        Se incluye dentro del propio atributo del evento.
+
+            1.1 Manejadores de eventos y variable this
+                This es una referencia al objeto.
+    -->
+    <button onclick="alert('Gracias por pinchar');">Pinchame y veras</button>
+
+    <div onclick="console.log('Has pinchado con el ratón');" 
+        onmouseover="console.log('Acabas de pasar el ratón por encima');">
+        Puedes pinchar sobre este elemento o simplemente pasar el ratón por encima
+    </div>
+
+    <!-- Sin this -->
+    <div id="contenidos1" style="width:150px; height:60px; border:4px solid silver"
+        onmouseover="document.getElementById('contenidos1').style.borderColor ='blue';"
+        onmouseout="document.getElementById('contenidos1').style.borderColor='red';">
+        Sección de contenidos...
+    </div>
+
+    <!-- Con this 
+        No hace falta poner a la etiqueta 'id' porque con el this esta haciento referencia a la etiqueta 'div' donde está-->
+    <div id="contenidos2" style="width:150px; height:60px; border:4px solid silver"
+        onmouseover="this.style.borderColor='blue';"
+        onmouseout="this.style.borderColor='red';">
+        Sección de contenidos...
+    </div>
+    <!-- 
+        2) Manejadores como funciones JavaScript externas. 
+    -->
+    <script>
+        function muestraMensaje(){
+            console.log('Gracias por pinchar en la función');
+        }
+
+        function muestraMensajeParametros(mensaje){
+            console.log(mensaje);
+        }
+    </script>
+
+    <button onclick="muestraMensaje()">Pincha aqui también</button>
+    <button onclick="muestraMensajeParametros('Hola caracola')">Pincha aquí también</button>
+
+    <!--
+        3) Manejadores de eventos "semánticos"
+
+        Lo suyo es tener tres ficheros diferentes, cada uno con su lenguaje, es decir, un .js un .css y un .html
+
+        Esta técnica consiste en  asignar las funciones externas mediante las propiedades DOM de los elementos HTML
+
+        La principal ventaja de los manejadores de eventos semánticos es que el codigo HTML de la página resultante quedaría muy limpio
+    -->
+    <hr/>
+    <!-- Primero creamos el boton, ya que tiene que estar creado-->
+    <button id="pinchable">Pinchame y veras el ejemplo semantico</button>
+
+    <script>
+        function muestraMensaje(){
+            console.log('Gracias por pinchar en la función con el ejemplo semántico');
+        }
+        //Ponemos el script despues de crear el boton ya que si lo ponemos antes, el id del elemento no se habria creado
+        document.getElementById("pinchable").onclick = muestraMensaje;// mediante el DOM asignamos el onclick y le asignamos la funcion que queremos ejecutar
+
+        pinchable.onclick = muestraMensaje;
+    </script>
+
+
+    
+</body>
+</html>

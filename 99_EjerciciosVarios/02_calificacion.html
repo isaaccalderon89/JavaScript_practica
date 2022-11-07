@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 02</title>
+    <script type="text/javascript">
+        /* TODO ESTO Era mi solución
+        if(Number(nota)==nota){
+            if(nota < 3){
+                document.write("Muy deficiente");
+            } if((nota > 3)&&(nota < 5)){
+                document.write("Insuficiente");
+            }if((nota > 5)&&( nota < 6)){
+                document.write("suficiente");
+            } if((nota > 7) && (nota < 9)){
+                document.write("notable")
+            } else ((nota > 9)&&(nota >=10)){
+                document.write("Sobresaliente")
+            }
+
+        } else{
+            alert("El numero introducido no es válido");
+        }
+        */
+        do{
+            var nota = prompt("Introduce la nota que has sacado: ")
+            if(Number(nota)==nota){
+                if(nota> 0 && nota <=10){
+                    if(nota < 3){
+                        alert("Muy deficiente");
+                    } else if (nota < 5){
+                        alert("Insuficiente");
+                    } else if (nota < 6){
+                        alert("Suficiente");
+                    } else if (nota < 7){
+                        alert("bien");
+                    } else if (nota < 9){
+                        alert("Notable");
+                    } else if( nota >= 9){
+                        alert("Sobresaliente")
+                    }
+                }
+            } else{
+                alert("Nota errónea")
+            }
+        } while (nota!= undefined)
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 02!! No se va a imprimir nada por pantalla</h1>
+</body>
+</html>

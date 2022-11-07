@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript">
+
+    //Funcion que manipulamos directamente todo el documento mediante el document.write
+    function usarDocumentWrite(){
+        /*Con la funcion document.write es una forma tosca de modificar el DOM*/
+        document.write("<h1>Document.write</h1>")
+        document.write("<h2>Hola</h2>")
+        document.write("<h2>Que</h2>")
+        document.write("<h2>Tal</h2>")
+        //Con esto nos cargamos el html aterior
+    }
+
+    //En esta funcion llenamos contenido de un elemento con nodos en HTML
+    function usarInnerHTML(){
+        /* innerHTML es una propiedad que poseen todos los nodos del árbol que representa
+        a una etiqueta que puede tener contenido*/
+        div1.innerHTML="<h2 align='center'>Contenido HTML generado dinámicamente</h2>"
+    }
+
+    //vaciamos el contenido previamente generado
+    function vaciarInnerHTML(){
+        div1.innerHTML = ""
+        //Con esto lo que hacemos realmente es pedir que no imprima nada
+    }
+
+    //Funcion que devuelve un array de objetos pelicula.
+    function listarPeliculas(){
+        let peliculas = [
+            {titulo : 'Alien',
+             director : 'Ridley Scott',
+             genero : 'CiFi'},
+            {titulo : 'Die Hard', 
+             director : 'Jhon Mctiernan',
+             genero : 'Action'}, 
+            {titulo : '2001', 
+             director : 'Stanley Kubrik',
+             genero : 'Cifi' }, 
+            {titulo : 'Don erre que erre', 
+             director : 'Jose luis Saenz de Heredia', 
+             genero : 'Comedia'}
+        ]
+        return peliculas;
+    }
+
+    function crerarNodosDOM(){
+
+        let peliculas = listarPeliculas();
+
+                //MANERA ANTIGUA DE CREAR ATRIBUTOS
+        let tabla = document.createElement("table")
+        let atr = document.createAttribute("align")//Esta manera de crear ATRIBUTOS esta desfasada
+        atr.value = "center"
+        tabla.setAttribute(atr)//Tenemos que hacer tres líneas de códgigo para un solo atributo
+
+        
+
+                //MANERA ACTUAL DE CREAR ATRIBUTOS
+        tabla.setAttribute("border, 1")
+
+        let trCabecera = document.createElement("tr")//RECORDATORIO la etiqueta <tr> significa 'table row' que sirven para crear los contenedores
+        let th1 = document.createElement("th")//RECORDATORIO la etiqueta <th> significa 'table head' que sirve para crear los titulos
+        let th2 = document.createElement("th")
+        let th3 = document.createElement("th")
+        let txt1 = document.createTextNode("Titulo")
+        let txt2 = document.createTextNode("Director")
+        let txt3 = document.createTextNode("Genero")
+
+        //Una vez creado los elementos hay que ordenarlos con 'appenChild' vamos introduciendo los elementos
+        th1.appendChild(txt1)//Empezamos de menor a mayor
+        th2.appendChild(txt2)//Vamos introduciendo los textos a las etiquetas 'th'
+        th3.appendChild(txt3)
+        trCabecera.appendChild(th1)//Las etiquetas 'th' a las etiquetas 'tr'
+        trCabecera.appendChild(th2)
+        trCabecera.appendChild(th3)
+        tabla.appendChild(trCabecera)//finalmente las 'tr' a la etiqueta 'table'
+
+        //Ahora vamos con las filas de las peliculas, por cada pelicula creo una fila nueva en la tabla.
+
+        for(let pelicula of peliculas){
+            let tr = document.createElement("tr")
+            let td1 = document.createElement("td")
+            let td2 = document.createElement("td")
+            let td3 = document.createElement("td")
+            let txt4 = document.createTextNode(pelicula.titulo)
+            let txt5 = document.createTextNode(pelicula.director)
+            let txt6 = document.createTextNode(pelicula.genero)
+            td1.appendChild(txt4)
+            td1.appendChild(txt5)
+            td1.appendChild(txt6)
+            tr.appendChild(td1)
+            tr.appendChild(td2)
+            tr.appendChild(td3)
+
+            tabla.appendChild(tr)
+        }
+
+        //Añadimos la tabla al div 
+        div2.appendChild(tabla)
+    }
+
+    function crerarNodosHTML(){
+
+        let peliculas = listarPeliculas();
+
+        let tabla = 
+            "<table align = 'center' border = '1'>"+
+                "<tr>"+
+                    "<th>Titulo</th>"+
+                    "<th>Director</th>"+
+                    "<th>Genero</th>"+
+                "<tr>"
+
+        for(let pelicula of peliculas){
+            tabla = tabla +
+                "<tr>" + 
+                    "<td>"+pelicula.titulo+"</td>"+
+                    "<td>"+pelicula.director+"</td>"+
+                    "<td>"+pelicula.genero+"</td>"+
+                "<tr>"
+        }
+
+        tabla = tabla+
+            "</table>"
+        
+            div3.innerHTML = tabla
+    }
+
+    function vaciarSelect(){
+
+        //A cualquier padre le podemos pedir que elimine a un hijo
+        //nodoPadre.removeChild(nodoHijo)
+        let nodos = ciudades.childNodes
+        let tam = nodos.length
+        console.log(nodos)
+        for(let a = 0; a<tam; a++){
+            let nodo = nodos[0]
+            nodo.remove()
+        }
+    }
+</script>
+<body>
+    
+    <marque>
+        <h1>
+            <font color ="lightGreen">
+                DHTML
+            </font>
+        </h1>
+    </marque>
+
+    <hr/>
+
+    <div align="center">
+        <input type="button" id="btn_documentWrite" onclick="usarDocumentWrite()" value="Document.write"/>
+        <input type="button" id="btn_innerHTML" onclick="usarInnerHTML()" value="Usar innerHTML"/>
+        <input type="button" id="btn_vaciarInnerHTML" onclick="vaciarInnerHTML()" value="vacias innerHTML"/>
+        <input type="button" id="btn_crerarNodosDOM"    onclick="crerarNodosDOM()" value="Crear nodos"/>
+        <input type="button" id="btn_crerarNodosDOM2" onclick="crerarNodosHTML()" value="Crear nodos 2"/>
+        <input type="button" id="btn_vaciarSelect" onclick="vaciarSelect()" value="Vaciar select"/>
+    </div>
+
+    <hr/>
+
+    <div id="div1"></div>
+
+    <hr/>
+
+    <div id="div2"></div>
+
+    <hr/>
+
+    <div id="div3"></div>
+
+    <hr/>
+
+    <div align="center">
+        <select id="ciudades">
+            <option value="Getafe">Getafe</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Salamanca">Salamanca</option>
+            <opcion value="Santa Pola">Santa Pola</opcion>
+            <option value="Chinchon">Chinchon</option>
+        </select>
+    </div>
+    
+    <hr/>
+
+    <div id="div5"></div>
+</body>
+
+</html>
