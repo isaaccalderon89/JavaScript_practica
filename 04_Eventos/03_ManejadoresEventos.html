@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejadores de Eventos</title>
+</head>
+<!--
+     Manejadores de eventos semanticos de DOM (1)
+
+     El objetivo de esta parte es entender como podemos asignar funciones a los manejadores de eventos
+-->
+<script type="text/javascript">
+
+    function btnDalePulsado(){
+        console.log("Dale leña al mono que es de goma")
+        vaciarFormulario()
+    }
+
+    function vaciarFormulario(){
+        cajaTexto.value= ""
+    }
+
+    //funcion que evita poner mas de 10 caracteres en un textArea
+    function limitaOnload(textArea, maximoCaracteres){
+        if(textArea.value.length >= maximoCaracteres){
+            maxNumeroAlcanzadoOnLoad.style.display = "block"
+            return false;
+        } else {
+            maxNumeroAlcanzadoOnLoad.style.display ="none"
+            return true;
+        }
+    }
+
+    let cadena = ""
+    function concatenarLetra(letra){
+        cadena = cadena+letra
+        console.log(cadena)
+    }
+
+    //valida que el formulario no este vacio 
+    function validarFormulario(){
+        let ok = true
+        if(dato.value.trim() == ""){
+            espan.innerHTML = "Dato es obligatorio"
+            ok = false
+        }
+        return ok
+    }
+    window.omload = function(){
+        //Podemos asociar como manejador de eventos una función que tengamos ya declarada, siempre y cuando NO TENGA PARAMETROS DE ENTRADA
+        btnDale.onclick = btnDalePulsado
+        btnVaciar.onclick = vaciarFormulario
+
+        //Podemos tambien inyectar una funcion anonima directamente, es decir que no tenga nombre o no se haya creado antes
+        cajaTexto.onfocus = function(){
+            console.log("Has pasado por encima")
+        }
+
+        cajaTexto.onmouseleave = function(e){
+            console.log("Has salido")
+        }
+
+        //Cuando se dispara un evento nos lo proporcionan como parametro a la funcion asignada
+        cajaTexto.onkeyup = function(e){
+            let letra = e.key
+            concatenarLetra(letra)
+        }
+
+        textArea.onkeypress = function(e){
+            if(!limitaOnLoad(textArea,10)){
+                e.preventDefault()
+            }
+        }
+
+        btnEnviar.onclick = validarFormulario
+    }
+
+</script>
+<body>
+    <div style="text-align: center;">
+        <h1>Manejadores de eventos semanticos de DOM (1)</h1>
+
+        <hr/>
+
+        <button id="btnDale">DALE</button>
+
+        <hr/>
+
+        <input type="text" id="cajaTexto" />
+        <button id="btnVaciar">Vaciar</button>
+
+        <hr/>
+
+        <p>Text area que solo podemos escribir 10 caracteres</p>
+        <textarea id="TextArea"></textarea>
+        <p id="maxNumeroAlcanzadoOnload" style="color: red; display:none;">
+            Ha alcanzado el numero maximo de caracteres!!
+        </p>
+
+        <hr/>
+
+        <form id="" action="xxx">
+            Dato <input type="text" name="dato" id="dato" />
+            <input type="submit" id="btnEnviar" value="Enviar"/>
+            <spam id="espan"></spam>
+        </form>
+    </div>
+</body>
+</html>
