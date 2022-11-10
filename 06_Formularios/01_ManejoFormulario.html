@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo Formularios</title>
+
+    <script type="text/javascript">
+        window.onload =function(){
+            //con value obtenemos el valor de un type text o de un text area
+            var valor = document.getElementById("texto").value;
+            console.log(valor)
+
+            //Para obetener los valores de tipos radios
+            console.log("radio")
+            var elementos = document.getElementsByName("pregunta")//devuleve un array con todos los elementos que se llamen 'pregunta'
+            for(var i=0; i<elementos.length; i++){
+                console.log("Elemento: "+ elementos[i] + "\n Seleccionado: " + elementos[i].checked);
+            }
+
+            console.log("Accediendo al elemento pregunta_si")
+            console.log(pregunta_si.checked)
+
+            //Para obtener los valores del checkbox
+            console.log("checkbox")
+            var elemento = document.getElementById("condiciones");
+            console.log(" Elemento: " + elemento.value + "\n Seleccionado: " + elemento.checked);
+
+            elemento = document.getElementById("privacidad");
+            console.log(" Elemento: " + elemento.value + "\n Seleccionado: " + elemento.checked);
+
+            //trabajar con select
+            console.log("select")
+            var lista = document.getElementById("opciones");
+            var indiceSeleccionado = lista.selectedIndex;//El metodo 'selectedIndex' te indica el metodo que está seleccionado
+            console.log(indiceSeleccionado)
+
+            //con el indice y el array "options", obtener la opcion seleccionada
+            var opcionSeleccionada = lista.options[indiceSeleccionado]
+
+            //Obtener el valor y el texto de la opcion seleccionada
+            var textoSeleccionado = opcionSeleccionada.text;
+            var valorSeleccionado = opcionSeleccionada.value;
+            console.log("Opción seleccionada: " +textoSeleccionado+ "\n Valor  de la opción: " + valorSeleccionado);
+            //Otra manera de sacar los valores con el select
+            //Obtener el valor con la oopcion seleccionada
+            var valorSeleccionado = lista.options[lista.selectedIndex].value;
+            //Obtener el texto que muestra la opcion seleccionada
+            var textoSeleccionado = lista.options[lista.selectedIndex].text;
+            console.log("Opción seleccionada: " + textoSeleccionado + "\n Valor de la opción: " + valorSeleccionado);
+
+            //Podemos trabajar con todos los formularios de la pagina
+            var formularios = document.forms //nos devuelve un array con todos los formularios
+            console.log(formularios[0])
+
+            //y obtener sus items
+            console.log(formularios[0].texto.value)
+
+
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <h1 style="text-align: center; color:blue; text-decoration: underline;">Manejo de Formularios</h1>
+        <input type="text" id="texto" value="Texto escrito"/>
+        <br/>
+        <input type="radio" value="si" name="pregunta" id="pregunta_si" checked="checked"/> SI
+        <input type="radio" value="no" name="pregunta" id="pregunta_no"/> NO
+        <input type="radio" value="nsnc" name="pregunta" id="pregunta_nsnc"/> NS/NC
+        <br/>
+        <select id="opciones" name="opciones">
+            <option value="1">Primer Valor</option>
+            <option value="2" selected>Segundo Valor</option>
+            <option value="3">Tercero Valor</option>
+            <option value="4">Cuarto Valor</option>
+        </select>
+        <br/>
+        <input type="checkbox" value="condiciones" name="condiciones" id="condiciones" checked="checked"/> He leído y acepto las condiciones
+        <input type="checkbox" value="privacidad" name="privacidad" id="privacidad"/> He leído la política de privacidad
+        <br/>
+        <textarea id="observaciones"></textarea>
+    </form>
+</body>
+</html>

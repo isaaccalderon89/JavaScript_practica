@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/funciones.js"></script>
+    <!--
+        Buenas practocas en programacion de JS 
+
+        Vamos a ver unas reglas para programar en JavaScript. Estas reglas hacen que el código sea mas limpio y mas seguro. 
+
+        1- EL código JS nunca debe estar dentro del HTML, en nonguna de sus formas. 
+        Debería ser codificado en un fichero externo. 
+        Ej: <script type="text/javascript" src="js/funciones.js></script>"
+
+        2- Toda la asignacion de eventos a elementos html debe estar en el fichero js externo dentro de la funcion windows.onload, es decir,
+        debemos usar los manejadores de eventos "semanticos".
+    -->
+</head>
+<body>
+    <!-- Aqui deberia de ir solamente HTML, nada de JS -->
+    <div style="text-align:center">
+        <h1>Buenas practicas</h1>
+
+        <div id="id_principal">
+            <p>Clickeamos para mostrar por console.log</p>
+        </div>
+
+        <hr/>
+
+        <p>Text arear que solo podemos escribir 10 caracteres</p>
+        <textarea id="textArea"></textarea>
+        <p id="maxNumeroAlcanzadoOnLoad" style="color:red;display: none;">ha alcanzado el numero maximo de caracteres</p>
+
+        <hr/>
+        <h3>Suma de dos numero</h3>
+        <input type="text" id="numero1"/>
+        <input type="text" id="numero2"/>
+        <button id="botonSumar">Sumar</button>
+        <input type="text" id="resultado"/>
+    </div>
+</body>
+</html>

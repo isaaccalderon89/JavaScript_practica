@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejadores de eventos semanticos de DOM (2)</title>
+
+    <script type="text/javascript">
+        /*
+            Manejadores de eventos semanticos de DOM (2)
+
+            La especificacion DOM define otros dos métodos similares a los disponibles:
+
+            addEventListener() -> add a un evento y una funcion a un elemento
+            removeEventListener() -> quitamos un evento y una funcion a un elemento
+
+            La principal diferencia entre estos métodos y los anteriores es que en este caso se requieren dos parámetros: 
+
+            1- El nombre del "event listener" o manejadore de evento. 
+            2- Una referencia a lafuncion encargada de procesar el evento, pudiendo ser también una función anonima
+
+            El primer argumento ose debe eliminar el prefijo "on" del manejador del evento. 
+        */
+    </script>
+</head>
+<body>
+    <div style="text-align:center">
+        <h1>Manejadores de eventos semanticos de DOM (2)</h1>
+        <div id="div_principal">
+            <p>Clickeame para mostra por console.log</p>
+        </div>
+
+        <button id="botonQuitar">Quitar el evento</button>
+        <button id="botonPoner">Poner el evento</button>
+
+        <div id="div_secundario">
+            <p>Clickeame para mostrar otra cosa por console.log</p>
+        </div>
+    </div>
+</body>
+</html>
